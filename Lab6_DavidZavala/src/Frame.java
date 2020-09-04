@@ -1,9 +1,11 @@
+
+import java.util.ArrayList;
+
 /*
  * To change this license header, choose License Headers in Project Properties.
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-
 /**
  *
  * @author 50431
@@ -15,6 +17,7 @@ public class Frame extends javax.swing.JFrame {
      */
     public Frame() {
         initComponents();
+        this.setLocationRelativeTo(null);
     }
 
     /**
@@ -26,21 +29,476 @@ public class Frame extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        AddSong = new javax.swing.JDialog();
+        JT_Nombre = new javax.swing.JTextField();
+        JT_Artista = new javax.swing.JTextField();
+        JT_Album = new javax.swing.JTextField();
+        JFT_Año = new javax.swing.JFormattedTextField();
+        JCB_Puntos = new javax.swing.JComboBox<>();
+        JB_Back_SaveSong = new javax.swing.JButton();
+        JB_3 = new javax.swing.JButton();
+        jLabel8 = new javax.swing.JLabel();
+        jLabel11 = new javax.swing.JLabel();
+        jLabel9 = new javax.swing.JLabel();
+        jLabel10 = new javax.swing.JLabel();
+        jLabel4 = new javax.swing.JLabel();
+        jLabel1 = new javax.swing.JLabel();
+        jLabel5 = new javax.swing.JLabel();
+        Fondo2 = new javax.swing.JLabel();
+        ListSong = new javax.swing.JDialog();
+        jTabbedPane1 = new javax.swing.JTabbedPane();
+        jPanel1 = new javax.swing.JPanel();
+        jScrollPane1 = new javax.swing.JScrollPane();
+        JList_Songs = new javax.swing.JList<>();
+        jLabel12 = new javax.swing.JLabel();
+        jButton1 = new javax.swing.JButton();
+        jButton2 = new javax.swing.JButton();
+        jButton3 = new javax.swing.JButton();
+        jButton4 = new javax.swing.JButton();
+        jPanel2 = new javax.swing.JPanel();
+        jLabel13 = new javax.swing.JLabel();
+        jComboBox1 = new javax.swing.JComboBox<>();
+        jScrollPane2 = new javax.swing.JScrollPane();
+        JList_Songs1 = new javax.swing.JList<>();
+        jButton5 = new javax.swing.JButton();
+        jButton6 = new javax.swing.JButton();
+        jButton7 = new javax.swing.JButton();
+        jButton8 = new javax.swing.JButton();
+        JB_1 = new javax.swing.JButton();
+        jLabel6 = new javax.swing.JLabel();
+        jLabel2 = new javax.swing.JLabel();
+        Fondo3 = new javax.swing.JLabel();
+        AddPlaylist = new javax.swing.JDialog();
+        JT_Nombre1 = new javax.swing.JTextField();
+        JB_SavePlaylist = new javax.swing.JButton();
+        jScrollPane4 = new javax.swing.JScrollPane();
+        JList_Songs3 = new javax.swing.JList<>();
+        JB_2 = new javax.swing.JButton();
+        jLabel17 = new javax.swing.JLabel();
+        jLabel16 = new javax.swing.JLabel();
+        jLabel7 = new javax.swing.JLabel();
+        jLabel18 = new javax.swing.JLabel();
+        Fondo4 = new javax.swing.JLabel();
+        JB_AddSong = new javax.swing.JButton();
+        JB_AddPlaylist = new javax.swing.JButton();
+        JB_ViewPlaylist = new javax.swing.JButton();
+        JB_ViewSongs = new javax.swing.JButton();
+        jLabel15 = new javax.swing.JLabel();
+        jLabel14 = new javax.swing.JLabel();
+        jLabel3 = new javax.swing.JLabel();
+        Fondo = new javax.swing.JLabel();
 
-        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
-        getContentPane().setLayout(layout);
-        layout.setHorizontalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 1000, Short.MAX_VALUE)
+        AddSong.setPreferredSize(new java.awt.Dimension(1101, 601));
+        AddSong.setResizable(false);
+        AddSong.getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        JT_Nombre.setFont(new java.awt.Font("Imprint MT Shadow", 2, 36)); // NOI18N
+        AddSong.getContentPane().add(JT_Nombre, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 170, 200, 50));
+
+        JT_Artista.setFont(new java.awt.Font("Imprint MT Shadow", 2, 36)); // NOI18N
+        AddSong.getContentPane().add(JT_Artista, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 280, 200, 50));
+
+        JT_Album.setFont(new java.awt.Font("Imprint MT Shadow", 2, 36)); // NOI18N
+        AddSong.getContentPane().add(JT_Album, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 400, 200, 50));
+
+        try {
+            JFT_Año.setFormatterFactory(new javax.swing.text.DefaultFormatterFactory(new javax.swing.text.MaskFormatter("####")));
+        } catch (java.text.ParseException ex) {
+            ex.printStackTrace();
+        }
+        JFT_Año.setFont(new java.awt.Font("Imprint MT Shadow", 2, 36)); // NOI18N
+        AddSong.getContentPane().add(JFT_Año, new org.netbeans.lib.awtextra.AbsoluteConstraints(660, 170, 130, 50));
+
+        JCB_Puntos.setFont(new java.awt.Font("Imprint MT Shadow", 2, 36)); // NOI18N
+        JCB_Puntos.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "1", "2", "3", "4", "5", "6", "7", "8", "9", "10" }));
+        AddSong.getContentPane().add(JCB_Puntos, new org.netbeans.lib.awtextra.AbsoluteConstraints(660, 260, 80, 50));
+
+        JB_Back_SaveSong.setBackground(new java.awt.Color(114, 114, 114));
+        JB_Back_SaveSong.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Icons/Save.png"))); // NOI18N
+        JB_Back_SaveSong.setBorder(null);
+        JB_Back_SaveSong.setBorderPainted(false);
+        JB_Back_SaveSong.setContentAreaFilled(false);
+        AddSong.getContentPane().add(JB_Back_SaveSong, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 500, 70, 60));
+
+        JB_3.setBackground(new java.awt.Color(114, 114, 114));
+        JB_3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Icons/Back.png"))); // NOI18N
+        JB_3.setBorder(null);
+        JB_3.setBorderPainted(false);
+        JB_3.setContentAreaFilled(false);
+        JB_3.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                JB_3ActionPerformed(evt);
+            }
+        });
+        AddSong.getContentPane().add(JB_3, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 10, -1, 50));
+
+        jLabel8.setFont(new java.awt.Font("Imprint MT Shadow", 2, 48)); // NOI18N
+        jLabel8.setForeground(new java.awt.Color(0, 102, 204));
+        jLabel8.setText("Puntos");
+        AddSong.getContentPane().add(jLabel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(500, 250, 170, 70));
+
+        jLabel11.setFont(new java.awt.Font("Imprint MT Shadow", 2, 48)); // NOI18N
+        jLabel11.setForeground(new java.awt.Color(0, 102, 204));
+        jLabel11.setText("Año");
+        AddSong.getContentPane().add(jLabel11, new org.netbeans.lib.awtextra.AbsoluteConstraints(500, 160, 170, 70));
+
+        jLabel9.setFont(new java.awt.Font("Imprint MT Shadow", 2, 48)); // NOI18N
+        jLabel9.setForeground(new java.awt.Color(0, 102, 204));
+        jLabel9.setText("Album");
+        AddSong.getContentPane().add(jLabel9, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 390, 170, 70));
+
+        jLabel10.setFont(new java.awt.Font("Imprint MT Shadow", 2, 48)); // NOI18N
+        jLabel10.setForeground(new java.awt.Color(0, 102, 204));
+        jLabel10.setText("Artista");
+        AddSong.getContentPane().add(jLabel10, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 270, 170, 70));
+
+        jLabel4.setFont(new java.awt.Font("Imprint MT Shadow", 2, 48)); // NOI18N
+        jLabel4.setForeground(new java.awt.Color(0, 102, 204));
+        jLabel4.setText("Nombre");
+        AddSong.getContentPane().add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 160, 180, 70));
+
+        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/the-lab.png"))); // NOI18N
+        AddSong.getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(850, 310, -1, -1));
+
+        jLabel5.setFont(new java.awt.Font("Engravers MT", 1, 56)); // NOI18N
+        jLabel5.setForeground(new java.awt.Color(0, 102, 102));
+        jLabel5.setText("Agregar Canciones");
+        AddSong.getContentPane().add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 0, 900, 130));
+
+        Fondo2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/fondo_hd_169_mesa_mezclas_bn.jpg"))); // NOI18N
+        AddSong.getContentPane().add(Fondo2, new org.netbeans.lib.awtextra.AbsoluteConstraints(-90, -360, 1190, 960));
+
+        ListSong.setResizable(false);
+        ListSong.getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        JList_Songs.setFont(new java.awt.Font("Imprint MT Shadow", 2, 24)); // NOI18N
+        jScrollPane1.setViewportView(JList_Songs);
+
+        jLabel12.setFont(new java.awt.Font("Imprint MT Shadow", 2, 48)); // NOI18N
+        jLabel12.setText("Songs");
+
+        jButton1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Icons/Delete.png"))); // NOI18N
+        jButton1.setBorder(null);
+        jButton1.setBorderPainted(false);
+        jButton1.setContentAreaFilled(false);
+
+        jButton2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Icons/Save.png"))); // NOI18N
+        jButton2.setBorder(null);
+        jButton2.setBorderPainted(false);
+        jButton2.setContentAreaFilled(false);
+
+        jButton3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Icons/Add.png"))); // NOI18N
+        jButton3.setBorder(null);
+        jButton3.setBorderPainted(false);
+        jButton3.setContentAreaFilled(false);
+
+        jButton4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Icons/Edit.png"))); // NOI18N
+        jButton4.setBorder(null);
+        jButton4.setBorderPainted(false);
+        jButton4.setContentAreaFilled(false);
+
+        javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
+        jPanel1.setLayout(jPanel1Layout);
+        jPanel1Layout.setHorizontalGroup(
+            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel1Layout.createSequentialGroup()
+                .addContainerGap()
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 746, Short.MAX_VALUE)
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
+                        .addComponent(jButton2, javax.swing.GroupLayout.PREFERRED_SIZE, 57, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(jButton3, javax.swing.GroupLayout.PREFERRED_SIZE, 57, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(jButton4, javax.swing.GroupLayout.PREFERRED_SIZE, 57, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 57, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addComponent(jLabel12, javax.swing.GroupLayout.PREFERRED_SIZE, 130, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(0, 0, Short.MAX_VALUE)))
+                .addContainerGap())
         );
-        layout.setVerticalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 700, Short.MAX_VALUE)
+        jPanel1Layout.setVerticalGroup(
+            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel1Layout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(jLabel12)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 363, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jButton1)
+                    .addComponent(jButton3)
+                    .addComponent(jButton4)
+                    .addComponent(jButton2))
+                .addGap(8, 8, 8))
         );
+
+        jTabbedPane1.addTab("Songs", jPanel1);
+
+        jLabel13.setFont(new java.awt.Font("Imprint MT Shadow", 2, 48)); // NOI18N
+        jLabel13.setText("Playlists");
+
+        jComboBox1.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
+
+        JList_Songs1.setFont(new java.awt.Font("Imprint MT Shadow", 2, 24)); // NOI18N
+        jScrollPane2.setViewportView(JList_Songs1);
+
+        jButton5.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Icons/Save.png"))); // NOI18N
+        jButton5.setBorder(null);
+        jButton5.setBorderPainted(false);
+        jButton5.setContentAreaFilled(false);
+
+        jButton6.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Icons/Add.png"))); // NOI18N
+        jButton6.setBorder(null);
+        jButton6.setBorderPainted(false);
+        jButton6.setContentAreaFilled(false);
+
+        jButton7.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Icons/Edit.png"))); // NOI18N
+        jButton7.setBorder(null);
+        jButton7.setBorderPainted(false);
+        jButton7.setContentAreaFilled(false);
+
+        jButton8.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Icons/Delete.png"))); // NOI18N
+        jButton8.setBorder(null);
+        jButton8.setBorderPainted(false);
+        jButton8.setContentAreaFilled(false);
+
+        javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
+        jPanel2.setLayout(jPanel2Layout);
+        jPanel2Layout.setHorizontalGroup(
+            jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel2Layout.createSequentialGroup()
+                .addContainerGap()
+                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jPanel2Layout.createSequentialGroup()
+                        .addComponent(jLabel13, javax.swing.GroupLayout.PREFERRED_SIZE, 179, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(jComboBox1, javax.swing.GroupLayout.PREFERRED_SIZE, 218, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(jScrollPane2, javax.swing.GroupLayout.DEFAULT_SIZE, 746, Short.MAX_VALUE)
+                    .addGroup(jPanel2Layout.createSequentialGroup()
+                        .addComponent(jButton5, javax.swing.GroupLayout.PREFERRED_SIZE, 57, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(jButton6, javax.swing.GroupLayout.PREFERRED_SIZE, 57, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(jButton7, javax.swing.GroupLayout.PREFERRED_SIZE, 57, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(jButton8, javax.swing.GroupLayout.PREFERRED_SIZE, 57, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addContainerGap())
+        );
+        jPanel2Layout.setVerticalGroup(
+            jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel2Layout.createSequentialGroup()
+                .addContainerGap()
+                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jLabel13)
+                    .addComponent(jComboBox1, javax.swing.GroupLayout.PREFERRED_SIZE, 52, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(jScrollPane2, javax.swing.GroupLayout.DEFAULT_SIZE, 359, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jButton8)
+                    .addComponent(jButton6)
+                    .addComponent(jButton7)
+                    .addComponent(jButton5))
+                .addContainerGap())
+        );
+
+        jTabbedPane1.addTab("Playlists", jPanel2);
+
+        ListSong.getContentPane().add(jTabbedPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(310, 60, 760, 520));
+
+        JB_1.setBackground(new java.awt.Color(114, 114, 114));
+        JB_1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Icons/Back.png"))); // NOI18N
+        JB_1.setBorder(null);
+        JB_1.setBorderPainted(false);
+        JB_1.setContentAreaFilled(false);
+        JB_1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                JB_1ActionPerformed(evt);
+            }
+        });
+        ListSong.getContentPane().add(JB_1, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 10, -1, 50));
+
+        jLabel6.setFont(new java.awt.Font("Engravers MT", 1, 48)); // NOI18N
+        jLabel6.setForeground(new java.awt.Color(153, 153, 153));
+        jLabel6.setText("CAnciones/Playslists");
+        ListSong.getContentPane().add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 0, 860, 70));
+
+        jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/the-lab.png"))); // NOI18N
+        ListSong.getContentPane().add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 350, -1, -1));
+
+        Fondo3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/fondo_hd_169_mesa_mezclas_bn.jpg"))); // NOI18N
+        ListSong.getContentPane().add(Fondo3, new org.netbeans.lib.awtextra.AbsoluteConstraints(-90, -360, 1190, 960));
+
+        AddPlaylist.setResizable(false);
+        AddPlaylist.getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        JT_Nombre1.setFont(new java.awt.Font("Imprint MT Shadow", 2, 36)); // NOI18N
+        AddPlaylist.getContentPane().add(JT_Nombre1, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 100, 200, 50));
+
+        JB_SavePlaylist.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Icons/Save.png"))); // NOI18N
+        JB_SavePlaylist.setBorder(null);
+        JB_SavePlaylist.setBorderPainted(false);
+        JB_SavePlaylist.setContentAreaFilled(false);
+        AddPlaylist.getContentPane().add(JB_SavePlaylist, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 10, 57, -1));
+
+        JList_Songs3.setFont(new java.awt.Font("Imprint MT Shadow", 2, 24)); // NOI18N
+        jScrollPane4.setViewportView(JList_Songs3);
+
+        AddPlaylist.getContentPane().add(jScrollPane4, new org.netbeans.lib.awtextra.AbsoluteConstraints(650, 160, 420, 410));
+
+        JB_2.setBackground(new java.awt.Color(114, 114, 114));
+        JB_2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Icons/Back.png"))); // NOI18N
+        JB_2.setBorder(null);
+        JB_2.setBorderPainted(false);
+        JB_2.setContentAreaFilled(false);
+        JB_2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                JB_2ActionPerformed(evt);
+            }
+        });
+        AddPlaylist.getContentPane().add(JB_2, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 10, -1, 50));
+
+        jLabel17.setFont(new java.awt.Font("Imprint MT Shadow", 2, 48)); // NOI18N
+        jLabel17.setForeground(new java.awt.Color(0, 102, 153));
+        jLabel17.setText("Songs");
+        AddPlaylist.getContentPane().add(jLabel17, new org.netbeans.lib.awtextra.AbsoluteConstraints(650, 80, 180, 70));
+
+        jLabel16.setFont(new java.awt.Font("Imprint MT Shadow", 2, 48)); // NOI18N
+        jLabel16.setForeground(new java.awt.Color(0, 102, 153));
+        jLabel16.setText("Nombre");
+        AddPlaylist.getContentPane().add(jLabel16, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 90, 180, 70));
+
+        jLabel7.setFont(new java.awt.Font("Engravers MT", 1, 48)); // NOI18N
+        jLabel7.setForeground(new java.awt.Color(0, 102, 102));
+        jLabel7.setText("Playslists");
+        AddPlaylist.getContentPane().add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(320, 0, 440, 70));
+
+        jLabel18.setIcon(new javax.swing.ImageIcon(getClass().getResource("/the-lab.png"))); // NOI18N
+        AddPlaylist.getContentPane().add(jLabel18, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 330, -1, -1));
+
+        Fondo4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/fondo_hd_169_mesa_mezclas_bn.jpg"))); // NOI18N
+        AddPlaylist.getContentPane().add(Fondo4, new org.netbeans.lib.awtextra.AbsoluteConstraints(-90, -360, 1190, 960));
+
+        setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setResizable(false);
+        getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        JB_AddSong.setFont(new java.awt.Font("Imprint MT Shadow", 2, 48)); // NOI18N
+        JB_AddSong.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Icons/Add big.png"))); // NOI18N
+        JB_AddSong.setBorder(null);
+        JB_AddSong.setBorderPainted(false);
+        JB_AddSong.setContentAreaFilled(false);
+        JB_AddSong.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                JB_AddSongActionPerformed(evt);
+            }
+        });
+        getContentPane().add(JB_AddSong, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 470, 70, 70));
+
+        JB_AddPlaylist.setFont(new java.awt.Font("Imprint MT Shadow", 2, 48)); // NOI18N
+        JB_AddPlaylist.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Icons/Add big.png"))); // NOI18N
+        JB_AddPlaylist.setBorder(null);
+        JB_AddPlaylist.setBorderPainted(false);
+        JB_AddPlaylist.setContentAreaFilled(false);
+        JB_AddPlaylist.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                JB_AddPlaylistActionPerformed(evt);
+            }
+        });
+        getContentPane().add(JB_AddPlaylist, new org.netbeans.lib.awtextra.AbsoluteConstraints(800, 470, 70, 70));
+
+        JB_ViewPlaylist.setFont(new java.awt.Font("Imprint MT Shadow", 2, 48)); // NOI18N
+        JB_ViewPlaylist.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Icons/View.png"))); // NOI18N
+        JB_ViewPlaylist.setBorder(null);
+        JB_ViewPlaylist.setBorderPainted(false);
+        JB_ViewPlaylist.setContentAreaFilled(false);
+        JB_ViewPlaylist.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                JB_ViewPlaylistActionPerformed(evt);
+            }
+        });
+        getContentPane().add(JB_ViewPlaylist, new org.netbeans.lib.awtextra.AbsoluteConstraints(880, 470, 70, 70));
+
+        JB_ViewSongs.setFont(new java.awt.Font("Imprint MT Shadow", 2, 48)); // NOI18N
+        JB_ViewSongs.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Icons/View.png"))); // NOI18N
+        JB_ViewSongs.setBorder(null);
+        JB_ViewSongs.setBorderPainted(false);
+        JB_ViewSongs.setContentAreaFilled(false);
+        JB_ViewSongs.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                JB_ViewSongsActionPerformed(evt);
+            }
+        });
+        getContentPane().add(JB_ViewSongs, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 470, 70, 70));
+
+        jLabel15.setBackground(new java.awt.Color(60, 20, 230));
+        jLabel15.setFont(new java.awt.Font("Imprint MT Shadow", 3, 48)); // NOI18N
+        jLabel15.setForeground(new java.awt.Color(0, 102, 153));
+        jLabel15.setText("Songs");
+        getContentPane().add(jLabel15, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 400, 200, -1));
+
+        jLabel14.setBackground(new java.awt.Color(60, 20, 230));
+        jLabel14.setFont(new java.awt.Font("Imprint MT Shadow", 3, 48)); // NOI18N
+        jLabel14.setForeground(new java.awt.Color(0, 102, 153));
+        jLabel14.setText("Playlists");
+        getContentPane().add(jLabel14, new org.netbeans.lib.awtextra.AbsoluteConstraints(780, 400, 200, -1));
+
+        jLabel3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/the-lab.png"))); // NOI18N
+        getContentPane().add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(450, 30, -1, -1));
+
+        Fondo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/unnamed-1-14.jpg"))); // NOI18N
+        getContentPane().add(Fondo, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 1101, -1));
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
+
+    private void JB_AddSongActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_JB_AddSongActionPerformed
+        this.setVisible(false);
+        AddSong.setVisible(true);
+        AddSong.setLocationRelativeTo(this);
+        AddSong.pack();
+    }//GEN-LAST:event_JB_AddSongActionPerformed
+
+    private void JB_2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_JB_2ActionPerformed
+        AddPlaylist.setVisible(false);
+        this.setVisible(true);
+        this.pack();
+    }//GEN-LAST:event_JB_2ActionPerformed
+
+    private void JB_1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_JB_1ActionPerformed
+        ListSong.setVisible(false);
+        this.setVisible(true);
+        this.pack();
+    }//GEN-LAST:event_JB_1ActionPerformed
+
+    private void JB_3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_JB_3ActionPerformed
+        AddSong.setVisible(false);
+        this.setVisible(true);
+        this.pack();
+    }//GEN-LAST:event_JB_3ActionPerformed
+
+    private void JB_ViewSongsActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_JB_ViewSongsActionPerformed
+        this.setVisible(false);
+        ListSong.setVisible(true);
+        ListSong.setLocationRelativeTo(this);
+        ListSong.pack();
+    }//GEN-LAST:event_JB_ViewSongsActionPerformed
+
+    private void JB_AddPlaylistActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_JB_AddPlaylistActionPerformed
+        this.setVisible(false);
+        AddPlaylist.setVisible(true);
+        AddPlaylist.setLocationRelativeTo(this);
+        AddPlaylist.pack();
+    }//GEN-LAST:event_JB_AddPlaylistActionPerformed
+
+    private void JB_ViewPlaylistActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_JB_ViewPlaylistActionPerformed
+        this.setVisible(false);
+        ListSong.setVisible(true);
+        ListSong.setLocationRelativeTo(this);
+        ListSong.pack();
+    }//GEN-LAST:event_JB_ViewPlaylistActionPerformed
 
     /**
      * @param args the command line arguments
@@ -53,7 +511,7 @@ public class Frame extends javax.swing.JFrame {
          */
         try {
             for (javax.swing.UIManager.LookAndFeelInfo info : javax.swing.UIManager.getInstalledLookAndFeels()) {
-                if ("Nimbus".equals(info.getName())) {
+                if ("windows".equals(info.getName())) {
                     javax.swing.UIManager.setLookAndFeel(info.getClassName());
                     break;
                 }
@@ -78,5 +536,65 @@ public class Frame extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JDialog AddPlaylist;
+    private javax.swing.JDialog AddSong;
+    private javax.swing.JLabel Fondo;
+    private javax.swing.JLabel Fondo2;
+    private javax.swing.JLabel Fondo3;
+    private javax.swing.JLabel Fondo4;
+    private javax.swing.JButton JB_1;
+    private javax.swing.JButton JB_2;
+    private javax.swing.JButton JB_3;
+    private javax.swing.JButton JB_AddPlaylist;
+    private javax.swing.JButton JB_AddSong;
+    private javax.swing.JButton JB_Back_SaveSong;
+    private javax.swing.JButton JB_SavePlaylist;
+    private javax.swing.JButton JB_ViewPlaylist;
+    private javax.swing.JButton JB_ViewSongs;
+    private javax.swing.JComboBox<String> JCB_Puntos;
+    private javax.swing.JFormattedTextField JFT_Año;
+    private javax.swing.JList<String> JList_Songs;
+    private javax.swing.JList<String> JList_Songs1;
+    private javax.swing.JList<String> JList_Songs3;
+    private javax.swing.JTextField JT_Album;
+    private javax.swing.JTextField JT_Artista;
+    private javax.swing.JTextField JT_Nombre;
+    private javax.swing.JTextField JT_Nombre1;
+    private javax.swing.JDialog ListSong;
+    private javax.swing.JButton jButton1;
+    private javax.swing.JButton jButton2;
+    private javax.swing.JButton jButton3;
+    private javax.swing.JButton jButton4;
+    private javax.swing.JButton jButton5;
+    private javax.swing.JButton jButton6;
+    private javax.swing.JButton jButton7;
+    private javax.swing.JButton jButton8;
+    private javax.swing.JComboBox<String> jComboBox1;
+    private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabel10;
+    private javax.swing.JLabel jLabel11;
+    private javax.swing.JLabel jLabel12;
+    private javax.swing.JLabel jLabel13;
+    private javax.swing.JLabel jLabel14;
+    private javax.swing.JLabel jLabel15;
+    private javax.swing.JLabel jLabel16;
+    private javax.swing.JLabel jLabel17;
+    private javax.swing.JLabel jLabel18;
+    private javax.swing.JLabel jLabel2;
+    private javax.swing.JLabel jLabel3;
+    private javax.swing.JLabel jLabel4;
+    private javax.swing.JLabel jLabel5;
+    private javax.swing.JLabel jLabel6;
+    private javax.swing.JLabel jLabel7;
+    private javax.swing.JLabel jLabel8;
+    private javax.swing.JLabel jLabel9;
+    private javax.swing.JPanel jPanel1;
+    private javax.swing.JPanel jPanel2;
+    private javax.swing.JScrollPane jScrollPane1;
+    private javax.swing.JScrollPane jScrollPane2;
+    private javax.swing.JScrollPane jScrollPane4;
+    private javax.swing.JTabbedPane jTabbedPane1;
     // End of variables declaration//GEN-END:variables
+    //Personal Variables Declaration
+    static Cancion TempSong = null;
 }
