@@ -19,11 +19,11 @@ public class Cancion {
 
     private int Puntos, Año;
     private String Nombre, Artista, Album;
-
+    private File Archivo = new File("./Files/Cancion.txt");
     public Cancion() {
     }
 
-    public Cancion(String Nombre, String Artista, String Album, int Puntos, int Año) {
+    public Cancion(String Nombre, String Artista, String Album, int Año, int Puntos) {
         this.Nombre = Nombre;
         this.Artista = Artista;
         this.Album = Album;
@@ -76,14 +76,9 @@ public class Cancion {
         return Nombre + " By: " + Artista;
     }
 
-    public void ReadFileScanner() {
-        //relativo al proyecto: copy y paste el text file a la carpeta
-        //leer usando el scanner
-        File archivo = null;
+    public void ReadFileScanner(File archivo) {
         Scanner sc = null;
         try {
-            //el ./ devuelve el lugar donde esta localizado el contexto
-            archivo = new File("./Files/Cancion.txt");
             sc = new Scanner(archivo);
             while (sc.hasNext()) {
                 String[] next = sc.nextLine().split("|"); 
@@ -96,19 +91,33 @@ public class Cancion {
         sc.close();
     }
 
-    public void WriteFile(String Nombre, String Artista, String Album, int Puntos, int Año) {
+    public void WriteFile(String Nombre, String Artista, String Album, int Año, int Puntos) {
         File archivo = null;
+        FileWriter fw = null;
+        BufferedWriter bw = null; 
+        try {
+            fw = new FileWriter(Archivo, true);
+            bw = new BufferedWriter(fw);
+            bw.write(Nombre + "|" + Artista + "|" + Album + "|" + Año + "|" + Puntos);
+            bw.newLine();
+            bw.flush();
+        } catch (Exception e) {
+            e.printStackTrace();
+            JOptionPane.showMessageDialog(null, "Error en el Writer.");
+        }
+    }
+    
+    public void WriteFileMod(ArrayList<Cancion> Songs) {
         FileWriter fw = null;
         BufferedWriter bw = null;
         try {
-            archivo = new File("./Files/Canciones/Canciones.txt");
-            fw = new FileWriter(archivo, true);
+            fw = new FileWriter(Archivo, false);
             bw = new BufferedWriter(fw);
-            bw.write(Nombre + "|" + Artista + "|" + Album + "|" + Puntos + "|" + Año);
+            for (Cancion Song : Songs) {
+            bw.write(Song.getNombre() + "|" + Song.getArtista()+ "|" + Song.getAlbum() + "|" + Song.getAño() + "|" + Song.getPuntos());
             bw.newLine();
-            //pasar de la ram a la rom
+            }
             bw.flush();
-            //primero cerrar el buffer y despues el canal
         } catch (Exception e) {
             e.printStackTrace();
             JOptionPane.showMessageDialog(null, "Error en el Writer.");

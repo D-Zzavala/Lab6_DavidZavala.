@@ -77,6 +77,7 @@ public class Frame extends javax.swing.JFrame {
                     String Punt = Next[3];
                     String Ano = Next[4];
                     Object[] Line = {Nom, Art, Alb, Punt, Ano};
+                    Songs.add(new Cancion(Nom, Art, Alb, Integer.parseInt(Punt), Integer.parseInt(Ano)));
                     TableModel.addRow(Line);
                     TableModel2.addRow(Line);
                     JTa_AllSongs.setModel(TableModel);
@@ -121,12 +122,12 @@ public class Frame extends javax.swing.JFrame {
         jScrollPane5 = new javax.swing.JScrollPane();
         JTa_AllSongs = new javax.swing.JTable();
         jPanel2 = new javax.swing.JPanel();
-        jLabel13 = new javax.swing.JLabel();
         JB_NewPlaylist = new javax.swing.JButton();
         JB_EditPlayList = new javax.swing.JButton();
         JB_DeletePlaylist = new javax.swing.JButton();
         jScrollPane4 = new javax.swing.JScrollPane();
         JTa_AllPlaylists = new javax.swing.JTable();
+        jLabel21 = new javax.swing.JLabel();
         JB_1 = new javax.swing.JButton();
         jLabel6 = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
@@ -329,11 +330,6 @@ public class Frame extends javax.swing.JFrame {
         jPanel2.setBackground(new java.awt.Color(51, 51, 51));
         jPanel2.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        jLabel13.setFont(new java.awt.Font("Imprint MT Shadow", 2, 48)); // NOI18N
-        jLabel13.setForeground(new java.awt.Color(0, 102, 102));
-        jLabel13.setText("Playlists");
-        jPanel2.add(jLabel13, new org.netbeans.lib.awtextra.AbsoluteConstraints(6, 6, 179, -1));
-
         JB_NewPlaylist.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Icons/Add.png"))); // NOI18N
         JB_NewPlaylist.setBorder(null);
         JB_NewPlaylist.setBorderPainted(false);
@@ -345,7 +341,7 @@ public class Frame extends javax.swing.JFrame {
         });
         jPanel2.add(JB_NewPlaylist, new org.netbeans.lib.awtextra.AbsoluteConstraints(569, 440, 57, -1));
 
-        JB_EditPlayList.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Icons/Edit.png"))); // NOI18N
+        JB_EditPlayList.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Icons/Save.png"))); // NOI18N
         JB_EditPlayList.setBorder(null);
         JB_EditPlayList.setBorderPainted(false);
         JB_EditPlayList.setContentAreaFilled(false);
@@ -356,7 +352,7 @@ public class Frame extends javax.swing.JFrame {
         });
         jPanel2.add(JB_EditPlayList, new org.netbeans.lib.awtextra.AbsoluteConstraints(632, 440, 57, -1));
 
-        JB_DeletePlaylist.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Icons/Delete.png"))); // NOI18N
+        JB_DeletePlaylist.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Icons/Upload.png"))); // NOI18N
         JB_DeletePlaylist.setBorder(null);
         JB_DeletePlaylist.setBorderPainted(false);
         JB_DeletePlaylist.setContentAreaFilled(false);
@@ -380,6 +376,11 @@ public class Frame extends javax.swing.JFrame {
         jScrollPane4.setViewportView(JTa_AllPlaylists);
 
         jPanel2.add(jScrollPane4, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 70, 740, 360));
+
+        jLabel21.setFont(new java.awt.Font("Imprint MT Shadow", 2, 48)); // NOI18N
+        jLabel21.setForeground(new java.awt.Color(0, 102, 102));
+        jLabel21.setText("Playlists:");
+        jPanel2.add(jLabel21, new org.netbeans.lib.awtextra.AbsoluteConstraints(6, 6, 190, -1));
 
         jTabbedPane1.addTab("Playlists", jPanel2);
 
@@ -807,14 +808,7 @@ public class Frame extends javax.swing.JFrame {
     private void JB_DeleteSongActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_JB_DeleteSongActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_JB_DeleteSongActionPerformed
-    private void SongMod(Cancion Song) {
-        JT_NombreSong.setText(Song.getNombre());
-        JT_Artista.setText(Song.getArtista());
-        JT_Album.setText(Song.getAlbum());
-        int num = Song.getAño();
-        JFT_Año.setText(String.valueOf(num));
-        JCB_Puntos.setSelectedIndex(Song.getPuntos() - 1);
-    }
+
 
     private void JB_EditSongActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_JB_EditSongActionPerformed
         if (JTa_AllSongs.getSelectedRowCount() > 1) {
@@ -822,8 +816,12 @@ public class Frame extends javax.swing.JFrame {
         } else if (JTa_AllSongs.getSelectedRowCount() < 1) {
             JOptionPane.showMessageDialog(null, "Elija una cancion.");
         } else {
-            Songs.get(JTa_AllSongs.getSelectedRow());
-
+            SongMod(Songs.get(JTa_AllSongs.getSelectedRow()));
+            AddSong.setVisible(true);
+            AddSong.pack();
+            AddSong.setLocationRelativeTo(null);
+            ListSong.setVisible(false);
+            JB_SaveSong.setVisible(false);
         }
     }//GEN-LAST:event_JB_EditSongActionPerformed
 
@@ -834,16 +832,33 @@ public class Frame extends javax.swing.JFrame {
         ListSong.setVisible(false);
     }//GEN-LAST:event_JB_NewSongActionPerformed
 
+    private void SongMod(Cancion Song) {
+        JT_NombreSong.setText(Song.getNombre());
+        JT_Artista.setText(Song.getArtista());
+        JT_Album.setText(Song.getAlbum());
+        int num = Song.getAño();
+        JFT_Año.setText(String.valueOf(num));
+        JCB_Puntos.setSelectedIndex(Song.getPuntos());
+    }
+    private void SongMod1(Cancion Song) {
+        Song.setNombre(JT_NombreSong.getText());
+        Song.setAlbum(JT_Album.getText());
+        Song.setArtista(JT_Artista.getText());
+        Song.setAño(Integer.parseInt(JFT_Año.getText()));
+        Song.setPuntos(JCB_Puntos.getSelectedIndex());
+                System.out.println(Songs);
+Songs.get(JTa_AllSongs.getSelectedRow());
+        System.out.println(Songs);
+        Songss.WriteFileMod(Songs);
+    }
+
     private void JB_SaveSongModActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_JB_SaveSongModActionPerformed
-        Songs.get(JTa_AllSongs.getSelectedRow()).setNombre(JT_NombreSong.getText());
-        Songs.get(JTa_AllSongs.getSelectedRow()).setArtista(JT_Artista.getText());
-        Songs.get(JTa_AllSongs.getSelectedRow()).setAlbum(JT_Album.getText());
-        Songs.get(JTa_AllSongs.getSelectedRow()).setPuntos(Integer.parseInt(JFT_Año.getText()));
-        Songs.get(JTa_AllSongs.getSelectedRow()).setAño(JCB_Puntos.getSelectedIndex() + 1);
-        Songss.WriteFile(JT_NombreSong.getText(), JT_Artista.getText(), JT_Album.getText(), Integer.parseInt(JFT_Año.getText()), JCB_Puntos.getSelectedIndex() + 1);
-        FillTables(JTa_AllSongs, Songs);
-        FillTables(JTa_AllSongs2, Songs);
-        resetPersona();
+        SongMod1(Songs.get(JTa_AllSongs.getSelectedRow()));
+        JB_SaveSong.setVisible(true);
+        ListSong.setVisible(true);
+        ListSong.pack();
+        ListSong.setLocationRelativeTo(null);
+        AddSong.setVisible(false);
         JOptionPane.showMessageDialog(this, "Guardado Exitoso.");
         resetPersona();
     }//GEN-LAST:event_JB_SaveSongModActionPerformed
@@ -927,7 +942,6 @@ public class Frame extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel11;
     private javax.swing.JLabel jLabel12;
-    private javax.swing.JLabel jLabel13;
     private javax.swing.JLabel jLabel14;
     private javax.swing.JLabel jLabel15;
     private javax.swing.JLabel jLabel16;
@@ -936,6 +950,7 @@ public class Frame extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel19;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel20;
+    private javax.swing.JLabel jLabel21;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
